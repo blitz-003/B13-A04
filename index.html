@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="w-[75%] mx-auto py-10">
+    <div class="w-[75%] mx-auto py-10 space-y-4">
       <h1 class="text-[#002C5C] text-3xl">Job Application Tracker</h1>
       <div class="cardsContainer grid grid-cols-3 gap-x-3 mt-5">
         <div class="card w-80 bg-base-100 card-xs shadow-sm">
@@ -44,13 +44,40 @@
         <button class="btn text-zinc-500">Interview</button>
         <button class="btn text-zinc-500">Rejected</button>
       </div>
-      <div class="noticeBoard">
-        <div class="card bg-base-100 card-xs shadow-sm flex justify-between">
-          <div class="card-body">
-            <h2 class="card-title text-[#323B49]">Total</h2>
-            <p class="text-[#002C5C]" id="totalCount">100</p>
+      <div class="noticeBoard space-y-4">
+        <div class="card bg-base-100 card-xs shadow-sm">
+          <div class="card-body flex flex-row justify-between">
+            <div>
+              <h2 class="card-title text-[#323B49]">Company Name</h2>
+              <p class="text-[#002C5C]" id="totalCount">Company Position</p>
+              <p>
+                <span>Remote</span> • <span>Fulltime</span> •
+                <span>$130,000 - $200,000</span>
+              </p>
+              <div class="badge badge-soft badge-primary">Primary</div>
+              <p>Description of job</p>
+              <button class="btn btn-success btn-outline">Interview</button>
+              <button class="btn btn-error btn-outline">Reject</button>
+            </div>
+            <button class="btn btn-circle btn-xs"></button>
           </div>
-          <button class="btn btn-circle"></button>
+        </div>
+        <div class="card bg-base-100 card-xs shadow-sm">
+          <div class="card-body flex flex-row justify-between">
+            <div>
+              <h2 class="card-title text-[#323B49]">Company Name</h2>
+              <p class="text-[#002C5C]" id="totalCount">Company Position</p>
+              <p>
+                <span>Remote</span> • <span>Fulltime</span> •
+                <span>$130,000 - $200,000</span>
+              </p>
+              <div class="badge badge-soft badge-primary">Primary</div>
+              <p>Description of job</p>
+              <button class="btn btn-success btn-outline">Interview</button>
+              <button class="btn btn-error btn-outline">Reject</button>
+            </div>
+            <button class="btn btn-circle btn-xs"></button>
+          </div>
         </div>
       </div>
     </div>
