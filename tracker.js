@@ -130,21 +130,21 @@ reject_btn_reference.addEventListener("click", function () {
 
 function updateFilterButtonStyles() {
   // Remove active style from all
-  all_btn_reference.classList.remove("bg-blue-300", "text-white");
-  interview_btn_reference.classList.remove("bg-blue-300", "text-white");
-  reject_btn_reference.classList.remove("bg-blue-300", "text-white");
+  all_btn_reference.classList.remove("bg-blue-500", "text-white");
+  interview_btn_reference.classList.remove("bg-blue-500", "text-white");
+  reject_btn_reference.classList.remove("bg-blue-500", "text-white");
 
   // Add active style to current filter
   if (currentFilter === "All") {
-    all_btn_reference.classList.add("bg-blue-300", "text-white");
+    all_btn_reference.classList.add("bg-blue-500", "text-white");
   }
 
   if (currentFilter === "Interview") {
-    interview_btn_reference.classList.add("bg-blue-300", "text-white");
+    interview_btn_reference.classList.add("bg-blue-500", "text-white");
   }
 
   if (currentFilter === "Rejected") {
-    reject_btn_reference.classList.add("bg-blue-300", "text-white");
+    reject_btn_reference.classList.add("bg-blue-500", "text-white");
   }
 }
 
@@ -163,74 +163,6 @@ function renderCount() {
 }
 
 renderCount();
-
-// function renderJobs() {
-//   let jobs_to_print = null;
-//   let notice_reference = document.querySelector(".noticeBoard");
-//   notice_reference.innerHTML = "";
-
-//   if (currentFilter === "All") {
-//     jobs_to_print = list_of_jobs;
-//   } else if (currentFilter === "Interview") {
-//     jobs_to_print = list_of_jobs.filter(
-//       (job) => job.applicationType === "Interview",
-//     );
-//   } else {
-//     jobs_to_print = list_of_jobs.filter(
-//       (job) => job.applicationType === "Rejected",
-//     );
-//   }
-
-//   console.log(jobs_to_print.length);
-//   if (jobs_to_print.length !== 0) {
-//     jobs_to_print.forEach((job) => {
-//       let job_html = `<div class="card bg-base-100 card-xs shadow-sm p-5">
-//           <div class="card-body flex flex-row justify-between">
-//             <div class="left-hand-side space-y-2">
-//               <h2 class="card-title text-blue-950 text-xl">
-//                 ${job.companyName}
-//               </h2>
-//               <p class="text-neutral-500 text-base" id="">
-//                 ${job.jobType}
-//               </p>
-//               <p class="text-neutral-500 text-sm space-x-2">
-//                 <span>${job.place}</span> <span>•</span> <span>${job.jobType}</span>
-//                 <span>•</span>
-//                 <span>${job.salary}</span>
-//               </p>
-//               <div
-//                 class="badge badge-lg badge-soft badge-primary border-b-indigo-100 text-blue-950"
-//               >
-//                 ${job.applicationType}
-//               </div>
-//               <p class="text-sm text-gray-800">${job.description}</p>
-//               <div class="space-x-4">
-//                 <button class="btn btn-success btn-outline">Interview</button>
-//                 <button class="btn btn-error btn-outline">Reject</button>
-//               </div>
-//             </div>
-//             <button class="btn btn-circle btn-xs">
-//               <img src="./images/trash.png" alt="" srcset="" />
-//             </button>
-//           </div>
-//         </div>`;
-
-//       notice_reference.innerHTML += job_html;
-//     });
-//   } else {
-//     notice_reference.innerHTML = `<div class="hero bg-white min-h-90">
-//           <div class="hero-content text-center">
-//             <div class="max-w-md flex flex-col items-center space-y-2">
-//               <img src="./images/file.png" alt="" srcset="" class="" />
-//               <h1 class="text-2xl font-bold">No Jobs Available</h1>
-//               <p class="">Check back soon for new opportunities</p>
-//             </div>
-//           </div>
-//         </div>`;
-//   }
-// }
-
-// renderJobs();
 
 function renderJobs() {
   let notice_reference = document.querySelector(".noticeBoard");
@@ -330,8 +262,6 @@ function renderJobs() {
 
     buttonsContainer.appendChild(interviewBtn);
     buttonsContainer.appendChild(rejectBtn);
-
-    //
 
     interviewBtn.addEventListener("click", function () {
       job.applicationType = "Interview";
