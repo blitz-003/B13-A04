@@ -307,7 +307,7 @@ function renderJobs() {
             ${job.description}
           </p>
 
-          <div class="space-x-4 buttons-container"></div>
+          <div class="buttons-container flex flex-col gap-2 sm:flex-row sm:gap-3"></div>
         </div>
 
            <button class="btn btn-circle btn-md delete-btn">
