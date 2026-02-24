@@ -250,7 +250,11 @@ function renderJobs() {
     );
   }
 
+  let reference_to_jobs_side_bar = document.querySelector("#jobs-sidebar");
+
   if (jobs_to_print.length === 0) {
+    reference_to_jobs_side_bar.textContent = `0 jobs`;
+
     notice_reference.innerHTML = `<div class="hero bg-white min-h-90">
 <div class="hero-content text-center">
 <div class="max-w-md flex flex-col items-center space-y-2">
@@ -263,11 +267,24 @@ function renderJobs() {
     return;
   }
 
+  if (currentFilter === "All") {
+    reference_to_jobs_side_bar.textContent = `${list_of_jobs.length} jobs`;
+  } else {
+    reference_to_jobs_side_bar.textContent = `${jobs_to_print.length} of ${list_of_jobs.length} jobs`;
+  }
+
   jobs_to_print.forEach((job) => {
     // Create Card
     const card = document.createElement("div");
     card.className = "card bg-base-100 card-xs shadow-sm p-5";
 
+    const badgeMap = {
+      "Not Applied": "badge-primary",
+      Interview: "badge-success",
+      Rejected: "badge-error",
+    };
+
+    let badgeClass = badgeMap[job.applicationType];
     card.innerHTML = `
       <div class="card-body flex flex-row justify-between">
         <div class="left-hand-side space-y-2">
@@ -282,7 +299,7 @@ function renderJobs() {
             ${job.place} • ${job.jobType} • ${job.salary}
           </p>
 
-          <div class="badge badge-lg badge-soft badge-primary">
+          <div class="badge badge-lg badge-soft ${badgeClass}">
             ${job.applicationType}
           </div>
 
@@ -293,9 +310,9 @@ function renderJobs() {
           <div class="space-x-4 buttons-container"></div>
         </div>
 
-        <button class="btn btn-circle btn-xs delete-btn">
-          🗑
-        </button>
+           <button class="btn btn-circle btn-md delete-btn">
+               <img src="./images/trash.png" alt="" srcset="" />
+            </button>
       </div>
     `;
 
@@ -314,16 +331,18 @@ function renderJobs() {
     buttonsContainer.appendChild(interviewBtn);
     buttonsContainer.appendChild(rejectBtn);
 
-    // 🔥 CLOSURE STARTS HERE
+    //
 
     interviewBtn.addEventListener("click", function () {
       job.applicationType = "Interview";
+
       renderCount();
       renderJobs();
     });
 
     rejectBtn.addEventListener("click", function () {
       job.applicationType = "Rejected";
+
       renderCount();
       renderJobs();
     });
