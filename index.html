@@ -12,32 +12,39 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <div class="w-[75%] mx-auto py-10 space-y-4">
-      <h1 class="text-[#002C5C] text-3xl">Job Application Tracker</h1>
-      <div class="cardsContainer grid grid-cols-3 gap-x-3 mt-5">
-        <div class="card w-80 bg-base-100 card-xs shadow-sm">
+    <div class="w-[75%] mx-auto py-14 space-y-4">
+      <h1 class="text-blue-950 text-3xl font-bold">Job Application Tracker</h1>
+      <div class="cardsContainer grid grid-cols-3 gap-x-2 mt-6">
+        <div class="card w-85 bg-base-100 card-xs shadow-sm p-2">
           <div class="card-body">
             <h2 class="card-title text-[#323B49]">Total</h2>
-            <p class="text-[#002C5C]" id="totalCount">100</p>
+            <p class="text-[#002C5C] text-2xl font-bold" id="totalCount">100</p>
           </div>
         </div>
-        <div class="card w-80 bg-base-100 card-xs shadow-sm">
+        <div class="card w-85 bg-base-100 card-xs shadow-sm p-2">
           <div class="card-body">
             <h2 class="card-title text-[#323B49]">Interview</h2>
-            <p class="text-emerald-500" id="interviewCount">100</p>
+            <p class="text-emerald-500 text-2xl font-bold" id="interviewCount">
+              100
+            </p>
           </div>
         </div>
-        <div class="card w-80 bg-base-100 card-xs shadow-sm">
+        <div class="card w-85 bg-base-100 card-xs shadow-sm p-2">
           <div class="card-body">
             <h2 class="card-title text-[#323B49]">Rejected</h2>
-            <p class="text-red-500" id="rejectCount">100</p>
+            <p class="text-red-500 text-2xl font-bold" id="rejectCount">100</p>
           </div>
         </div>
       </div>
-      <div class="divider"></div>
+      <div class="my-8">
+        <div class="divider"></div>
+      </div>
+
       <div class="currentJobsHeader flex justify-between">
-        <h3 class="text-blue-950">Available Jobs</h3>
-        <p><span>9</span> jobs</p>
+        <h3 class="text-blue-950 font-semibold text-xl">Available Jobs</h3>
+        <p class="font-medium text-base text-neutral-500">
+          <span>9</span> jobs
+        </p>
       </div>
       <div class="filterButtons flex gap-x-4">
         <button class="btn text-zinc-500">All</button>
@@ -45,38 +52,73 @@
         <button class="btn text-zinc-500">Rejected</button>
       </div>
       <div class="noticeBoard space-y-4">
-        <div class="card bg-base-100 card-xs shadow-sm">
+        <div class="card bg-base-100 card-xs shadow-sm p-5 hidden">
           <div class="card-body flex flex-row justify-between">
-            <div>
-              <h2 class="card-title text-[#323B49]">Company Name</h2>
-              <p class="text-[#002C5C]" id="totalCount">Company Position</p>
-              <p>
-                <span>Remote</span> • <span>Fulltime</span> •
+            <div class="left-hand-side space-y-2">
+              <h2 class="card-title text-blue-950 text-xl">
+                Mobile First Corp
+              </h2>
+              <p class="text-neutral-500 text-base" id="totalCount">
+                React Native Developer
+              </p>
+              <p class="text-neutral-500 text-sm space-x-2">
+                <span>Remote</span> <span>•</span> <span>Fulltime</span>
+                <span>•</span>
                 <span>$130,000 - $200,000</span>
               </p>
-              <div class="badge badge-soft badge-primary">Primary</div>
-              <p>Description of job</p>
-              <button class="btn btn-success btn-outline">Interview</button>
-              <button class="btn btn-error btn-outline">Reject</button>
+              <div
+                class="badge badge-lg badge-soft badge-primary border-b-indigo-100 text-blue-950"
+              >
+                Primary
+              </div>
+              <p class="text-sm text-gray-800">Description of job</p>
+              <div class="space-x-4">
+                <button class="btn btn-success btn-outline">Interview</button>
+                <button class="btn btn-error btn-outline">Reject</button>
+              </div>
             </div>
-            <button class="btn btn-circle btn-xs"></button>
+            <button class="btn btn-circle btn-xs">
+              <img src="./images/trash.png" alt="" srcset="" />
+            </button>
           </div>
         </div>
-        <div class="card bg-base-100 card-xs shadow-sm">
+        <div class="card bg-base-100 card-xs shadow-sm p-5 hidden">
           <div class="card-body flex flex-row justify-between">
-            <div>
-              <h2 class="card-title text-[#323B49]">Company Name</h2>
-              <p class="text-[#002C5C]" id="totalCount">Company Position</p>
-              <p>
-                <span>Remote</span> • <span>Fulltime</span> •
+            <div class="left-hand-side space-y-2">
+              <h2 class="card-title text-blue-950 text-xl">
+                Mobile First Corp
+              </h2>
+              <p class="text-neutral-500 text-base" id="totalCount">
+                React Native Developer
+              </p>
+              <p class="text-neutral-500 text-sm space-x-2">
+                <span>Remote</span> <span>•</span> <span>Fulltime</span>
+                <span>•</span>
                 <span>$130,000 - $200,000</span>
               </p>
-              <div class="badge badge-soft badge-primary">Primary</div>
-              <p>Description of job</p>
-              <button class="btn btn-success btn-outline">Interview</button>
-              <button class="btn btn-error btn-outline">Reject</button>
+              <div
+                class="badge badge-lg badge-soft badge-primary border-b-indigo-100 text-blue-950"
+              >
+                Primary
+              </div>
+              <p class="text-sm text-gray-800">Description of job</p>
+              <div class="space-x-4">
+                <button class="btn btn-success btn-outline">Interview</button>
+                <button class="btn btn-error btn-outline">Reject</button>
+              </div>
             </div>
-            <button class="btn btn-circle btn-xs"></button>
+            <button class="btn btn-circle btn-xs">
+              <img src="./images/trash.png" alt="" srcset="" />
+            </button>
+          </div>
+        </div>
+        <div class="hero bg-white min-h-90">
+          <div class="hero-content text-center">
+            <div class="max-w-md flex flex-col items-center space-y-2">
+              <img src="./images/file.png" alt="" srcset="" class="" />
+              <h1 class="text-2xl font-bold">No Jobs Available</h1>
+              <p class="">Check back soon for new opportunities</p>
+            </div>
           </div>
         </div>
       </div>
